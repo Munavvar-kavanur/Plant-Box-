@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
+  --color-brand-50: #f4fbf5;
+  --color-brand-100: #e5f6e7;
+  --color-brand-200: #c9ebd0;
+  --color-brand-300: #9dd9a7;
+  --color-brand-400: #68c075;
+  --color-brand-500: #42ac4e;
+  --color-brand-600: #338e3e;
+  --color-brand-700: #2b7034;
+  --color-brand-800: #26592e;
+  --color-brand-900: #204928;
+  --color-brand-950: #0e2812;
+
+  --color-bee-50: #fffbeb;
+  --color-bee-100: #fef3c7;
+  --color-bee-200: #fde68a;
+  --color-bee-300: #fcd34d;
+  --color-bee-400: #fbbf24;
+  --color-bee-500: #f59e0b;
+  --color-bee-600: #d97706;
+  --color-bee-700: #b45309;
+  --color-bee-800: #92400e;
+  --color-bee-900: #78350f;
+  --color-bee-950: #451a03;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee-reverse: marqueeReverse 30s linear infinite;
+  --animate-flutter: flutter 0.15s ease-in-out infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes marqueeReverse {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes flutter {
+
+    0%,
+    100% {
+      transform: rotate(5deg) scaleY(1);
+    }
+
+    50% {
+      transform: rotate(-5deg) scaleY(0.9);
+    }
+  }
+}
+
+/* Force dark mode to use class strategy */
+@custom-variant dark (&:where(.dark, .dark *));
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f4fbf5;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: #0c0a09;
+}
